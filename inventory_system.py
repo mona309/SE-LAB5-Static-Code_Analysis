@@ -32,10 +32,10 @@ def add_item(item="default", qty=0, logs=None):
 
 def remove_item(item, qty):
     """
-    Remove a quantity of an item from inventory.
+    Remove some quantity of item from inventory.
     Args:
-        item (str): Name of the item to remove.
-        qty (int): Quantity to remove.
+        item (str): Name of item to be removed.
+        qty (int): The amount to be remove.
     """
     try:
         stock_data[item] -= qty
@@ -47,11 +47,11 @@ def remove_item(item, qty):
 
 def get_qty(item):
     """
-    Get the quantity of an item in inventory.
+    Get the quantity of an item present in the inventory.
     Args:
-        item (str): Name of the item.
+        item (str): Name item.
     Returns:
-        int: Quantity of the item in stock.
+        int: Quantity in stock.
     """
     return stock_data[item]
 
@@ -103,9 +103,9 @@ def main():
     """Run main program to demonstrate inventory system functionality."""
     add_item("apple", 10)
     add_item("banana", -2)
-    #add_item(123, "ten")
+    # add_item(123, "ten")
     remove_item("apple", 3)
-    remove_item("orange", 1) #not found
+    remove_item("orange", 1)  # not found
     print("Apple stock:", get_qty("apple"))
     print("Low items:", check_low_items())
     save_data()
